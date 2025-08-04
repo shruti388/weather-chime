@@ -1,6 +1,6 @@
 import { WeatherData } from "@/components/WeatherCard";
 
-const API_KEY = "demo_key"; // This will be replaced with actual API key
+const API_KEY = "be6f0c43f6054bb0fd418910b229b4d3";
 const BASE_URL = "https://api.openweathermap.org/data/2.5/weather";
 
 export const fetchWeatherData = async (city: string): Promise<WeatherData> => {

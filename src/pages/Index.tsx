@@ -43,50 +43,21 @@ const Index = () => {
         backgroundBlendMode: 'overlay'
       }}
     >
-      {/* Floating clouds decoration */}
-      <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <Cloud className="absolute top-20 left-10 text-cloud-white/30 w-16 h-16 animate-pulse" />
-        <Cloud className="absolute top-40 right-20 text-cloud-white/20 w-12 h-12 animate-pulse delay-1000" />
-        <Cloud className="absolute bottom-40 left-1/4 text-cloud-white/25 w-14 h-14 animate-pulse delay-2000" />
-      </div>
-
-      <div className="relative z-10 min-h-screen flex flex-col items-center justify-center p-4 space-y-8">
-        {/* Header */}
-        <div className="text-center space-y-4">
-          <h1 className="text-5xl md:text-6xl font-bold text-foreground drop-shadow-lg">
-            Weather
-            <span className="text-primary"> Finder</span>
-          </h1>
-          <p className="text-lg md:text-xl text-foreground/80 max-w-md">
-            Get real-time weather information for any city around the world
-          </p>
-        </div>
-
-        {/* Search */}
+      <div className="min-h-screen flex flex-col items-center justify-center p-4 space-y-6">
+        <h1 className="text-4xl font-bold text-foreground mb-4">Weather Search</h1>
+        
         <WeatherSearch onSearch={handleSearch} isLoading={isLoading} />
 
-        {/* Loading State */}
         {isLoading && (
           <div className="flex items-center gap-2 text-foreground/80">
             <Loader2 className="w-5 h-5 animate-spin" />
-            <span>Loading weather data...</span>
+            <span>Loading...</span>
           </div>
         )}
 
-        {/* Error State */}
         {error && <ErrorMessage message={error} />}
 
-        {/* Weather Data */}
-        {weatherData && !isLoading && (
-          <div className="animate-in slide-in-from-bottom-4 duration-500">
-            <WeatherCard weather={weatherData} />
-          </div>
-        )}
-
-        {/* Footer */}
-        <footer className="text-center text-foreground/60 text-sm">
-          <p>Powered by OpenWeatherMap API</p>
-        </footer>
+        {weatherData && !isLoading && <WeatherCard weather={weatherData} />}
       </div>
     </div>
   );
