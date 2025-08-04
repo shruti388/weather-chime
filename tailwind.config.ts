@@ -52,6 +52,16 @@ export default {
 					DEFAULT: 'hsl(var(--card))',
 					foreground: 'hsl(var(--card-foreground))'
 				},
+				'sky-gradient': {
+					start: 'hsl(var(--sky-gradient-start))',
+					end: 'hsl(var(--sky-gradient-end))'
+				},
+				'cloud-white': 'hsl(var(--cloud-white))',
+				'weather-shadow': 'hsl(var(--weather-shadow))',
+				'temperature': {
+					warm: 'hsl(var(--temperature-warm))',
+					cold: 'hsl(var(--temperature-cold))'
+				},
 				sidebar: {
 					DEFAULT: 'hsl(var(--sidebar-background))',
 					foreground: 'hsl(var(--sidebar-foreground))',
